@@ -1,0 +1,32 @@
+.form {
+  margin-top: 12px;
+}
+
+.formControl {
+  margin-bottom: 20px;
+}
+
+.formControl > label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.formControl > .input {
+  padding: 8px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  min-width: 120px;
+}
+
+.formControl > .input + .inputError {
+  margin-top: 4px;
+  color: firebrick;
+}
+
+.formControl.error > label {
+  color: firebrick
+}
+
+.formControl.error > input {
+  border-color: firebrick;
+}

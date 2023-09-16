@@ -1,0 +1,19 @@
+.status {
+  padding: 8px 12px;
+  display: inline-block;
+  background-color: #efefef;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.status.healthy {
+  color: green;
+}
+
+.status.error {
+  color: red;
+}
+
+.status.disabled {
+  color: yellow;
+}

@@ -1,0 +1,37 @@
+.tableContainer {
+  position: relative;;
+}
+
+.spinnerContainer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.appsUsageTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+}
+
+.appsUsageTable > thead >  tr > td {
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 2px solid gray;
+}
+
+.appsUsageTable > tbody >  tr > td {
+  padding: 12px;
+  border-bottom: 2px solid lightgray;
+}
