@@ -1,0 +1,15 @@
+.pagination {
+  margin-bottom: 12px;
+}
+
+.pagination button {
+  margin-right: 4px;
+}
+
+.pagination span {
+  margin-right: 4px;
+}
+
+.pagination button:last-child {
+  margin-right: 0;
+}

@@ -25,6 +25,7 @@ const AddAppUsageForm = () => {
     event.preventDefault()
     setAppNameError(appName === '')
     setAppVolumeError(appVolume === '')
+    
     if (appName && appVolume) {
       console.log(appName, appVolume)
     }
@@ -34,10 +35,10 @@ const AddAppUsageForm = () => {
     <form 
       aria-labelledby='app-usage-form'
       aria-describedby='app-usage-form-description'>
-      <h2 id='app-usage-form-label'>App Usage Form</h2>
-      <p id='app-usage-form-description'>Fill the App Name and Volume</p>
+      <h2 id='app-usage-form-label'>&raquo; Add App Usage Form</h2>
+      <p id='app-usage-form-description'>Fill the App Name and Volume. Upon passing required validation, field values are logged into the console.</p>
       <div className={classNames(Styles.formControl, {[Styles.error] : appNameError})}>
-        <label htmlFor='app-name'>App Name <span className='reqd' aria-hidden>*</span></label>
+        <label htmlFor='app-name'>App Name <span className='ca-reqd' aria-hidden>*</span></label>
         <input
           id='app-name'
           name='appName'
@@ -45,11 +46,12 @@ const AddAppUsageForm = () => {
           type='text'
           className={Styles.input}
           onChange={handleAppNameChange}
+          aria-invalid={appNameError}
           aria-describedby='app-name-error'/>
-        {appNameError && <div className={Styles.inputError} id='app-name-error'>This field is required</div>}
+        {appNameError && <div role='alert' className={Styles.inputError} id='app-name-error'>This field is required</div>}
       </div>
       <div className={classNames(Styles.formControl, {[Styles.error] : appVolumeError})}>
-        <label htmlFor='app-volume'>App Volume <span className='reqd' aria-hidden>*</span></label>
+        <label htmlFor='app-volume'>App Volume <span className='ca-reqd' aria-hidden>*</span></label>
         <input 
           id='app-volume'
           name='appVolume'
@@ -58,8 +60,9 @@ const AddAppUsageForm = () => {
           min={0}
           className={Styles.input}
           onChange={handleAppVolumeChange}
+          aria-invalid={appVolumeError}
           aria-describedby='app-volume-error'/>
-        {appVolumeError && <div className={Styles.inputError} id='app-volume-error'>This field is required</div>}
+        {appVolumeError && <div role='alert' className={Styles.inputError} id='app-volume-error'>This field is required</div>}
       </div>
       <div className={Styles.formControl}>
         <button type='submit' onClick={handleSubmitClick}>Submit</button>
